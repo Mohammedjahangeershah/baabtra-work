@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do list</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+        <style>
+            input{
+                font-family: cursive;
+            }
+            textarea{
+                font-family: cursive;
+            }
+        </style>
+
+</head>
+
+<body>
+    <!-- As a link -->
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand mx-auto" href="#">
+                <h1 style="font-family: Arial, Helvetica, sans-serif;">To-Do List</h1>
+            </a>
+        </div>
+    </nav>
+    <hr>
+
+    <center>
+        <div style="width: 50%;">
+            <div class="mb-3">
+                <label for="task_name" class="form-label"><b>Task name</b> :</label>
+                <input type="text" id="input" placeholder="Enter the Task">
+            </div>
+            <div class="mb-3">
+                <label for="description_name"><b>Description</b></label> <br>
+                <textarea rows="3" id="txtArea" placeholder="Enter the Description"></textarea>
+            </div>
+        </div>
+        <button id="btnex" class="btn btn-dark">Add</button>
+        <!-- Button trigger modal -->
+<button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Submit
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Your Data has been Saved</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+         <h3> Successfully</h3>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-success">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+    </center>
+    <hr>
+    <table id="tablx" class="table table-striped mx-auto" style="width: 80%;text-align: center;">
+        <tr>
+            <th>Sl no</th>
+            <th>date</th>
+            <th>task</th>
+            <th>description</th>
+            <th>completion date</th>
+            <th>status</th>
+        </tr>
+        
+    </table>
+    
+<!-- Your HTML code remains the same -->
+
+<!-- Your HTML code remains the same -->
+
+<script>
+    // Function to add the task and description to the table
+    function addTask() {
+        var taskName = document.getElementById('input').value;
+        var description = document.getElementById('txtArea').value;
+        var currentDate = new Date().toLocaleDateString(); // Get the current date in 'MM/DD/YYYY' format
+
+        // Check if task and description fields are filled
+        if (taskName.trim() === '' || description.trim() === '') {
+            alert('Please enter a task and description.');
+            return;
+        }
+
+        // Create a new row for the table
+        var table = document.getElementById('tablx');
+        var newRow = table.insertRow(table.rows.length);
+
+        // Add data to the new row
+        var slNo = table.rows.length - 1; // Calculate the serial number (subtract 1 because of the table header)
+        newRow.insertCell(0).innerHTML = slNo;
+        newRow.insertCell(1).innerHTML = currentDate;
+        newRow.insertCell(2).innerHTML = taskName;
+        newRow.insertCell(3).innerHTML = description;
+        newRow.insertCell(4).innerHTML = '-'; // Placeholder for completion date
+        newRow.insertCell(5).innerHTML = 'Pending';
+        newRow.insertCell(6).innerHTML = '<button class="btn btn-success" onclick="markCompleted(this)">✓</button>';
+        newRow.insertCell(7).innerHTML = '<button class="btn btn-danger" onclick="markIncomplete(this)">✕</button>';
+        newRow.insertCell(8).innerHTML = '<button class="btn btn-secondary" onclick="deleteTask(this)">Delete</button>';
+
+        // Clear input fields after adding the task
+        document.getElementById('input').value = '';
+        document.getElementById('txtArea').value = '';
+    }
+
+    // Function to mark the task as completed
+    function markCompleted(button) {
+        var row = button.parentNode.parentNode; // Get the parent row of the clicked button
+        var completionDate = new Date().toLocaleDateString(); // Get the current date as completion date
+        row.cells[4].innerHTML = completionDate;
+        row.cells[5].innerHTML = 'Completed';
+    }
+
+    // Function to mark the task as incomplete
+    function markIncomplete(button) {
+        var row = button.parentNode.parentNode; // Get the parent row of the clicked button
+        var completionDate = new Date().toLocaleDateString(); // Get the current date as completion date
+        row.cells[4].innerHTML = completionDate;
+        row.cells[5].innerHTML = 'Incomplete';
+    }
+
+    // Function to delete the task
+    function deleteTask(button) {
+        var row = button.parentNode.parentNode; // Get the parent row of the clicked button
+        row.remove();
+    }
+
+    // Attach the 'addTask' function to the 'Add' button's click event
+    document.getElementById('btnex').addEventListener('click', addTask);
+</script>
+
+</body>
+
+</html>

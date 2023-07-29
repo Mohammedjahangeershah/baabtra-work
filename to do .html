@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./bst/css/bootstrap.min.css">
+    <script src="./bst/js/bootstrap.bundle.js"></script>
+    <style>
+        body{
+            text-align: center;
+        }
+        .btn {
+            background-color: rgb(40, 155, 243);
+            color: black;
+        }
+    
+      
+    </style>
+</head>
+<body>
+   
+        <h1>
+            To-Do List
+        </h1>
+        <br>
+        <label for=""> <b>Task </b>: <input class="task" type="text" placeholder="Enter the Task"></label> <br> <br>
+        <label for=""><b>Discription </b></Discription> </label> <br> <textarea class="disc" name="" id="" cols="30" rows="5" placeholder="Enter the discription"></textarea> 
+        <br><br>
+        <button type="button" class="btn btn-outline-secondary" onclick="myfunction()">Add</button>
+
+    <br><br>
+ <table class="table">
+    <thead >
+      <tr>
+        <th scope="col">Sl.No</th>
+        <th scope="col">Date</th>
+        <th scope="col">Task</th>
+        <th scope="col">Discription</th>
+        <th scope="col">Status</th>
+      </tr>
+    </thead>
+    <!-- <tbody>
+    <tr>
+        <td>hi</td>
+        <td>hi</td>
+        <td>hi</td>
+        <td>hi</td>
+        <td>hi</td>
+    </tr>
+</tbody> -->
+    </table>
+    <script>
+        function myfunction(){
+            var li = document.createElement("tr");
+  var inputValue = document.getElementById("task").value;
+  var t = document.createTextNode(inputValue);
+        }
+
+         
+      
+        
+        
+        // function ab(){
+        //  var a=20
+        //  if (a==20){
+        //     let x=10
+        //     const abc=200
+        //     abc=100
+            
+        //  }
+         
+        
+        //  return a
+        // }
+        // // var a=10
+        // ab()
+        // // console.log(ab())
+        
+        
+    </script>
+</body>
+</html>

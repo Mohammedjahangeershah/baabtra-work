@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            background-color: lightblue;
+            color:black;
+            border-radius: 10px;
+            
+        }
+        
+    </style>
+    <script>
+        Name=prompt("enter the customer name");
+        ConsumerId=parseInt(prompt("Enter the consumer Number"));
+        uniit=parseInt(prompt("enter the unit used"));
+         document.write("<form><table border='0' align='center' cellpadding='10' >");
+        document.write("<tr><th colspan='2' align='center'>ELECTRY CITY BILL</th></tr>");
+        document.write("<tr><th align='right';>Name of customers :</th><td> "+Name+" </td></tr>");
+        document.write("<tr><th align='right';>Consumer number :</th><td>"+ConsumerId+"</td></tr>");
+        document.write("<tr><th align='right'>Enter the unit used</th><td>"+uniit+"</td></tr>");
+        if(uniit>=0&&uniit<=100){
+            total=uniit*10
+            document.write("<tr align='right';><th>Total fair :</th><td>:"+total+"</td></tr>");
+        }
+        if(uniit>=101&&uniit<=200){
+            total=18*(uniit-100)+1000
+            document.write("<tr><th align='right';>Total fair :</th><td> "+total+" </td></tr>");
+        }
+        if(uniit>=201&&uniit<=300){
+            total=25*(uniit-200)+2800
+            document.write("<tr><th align='right';>Total fair :</th><td> "+total+" </td></tr>");
+        }
+        if(uniit>=301&&uniit<=400){
+            total=32*(uniit-300)+5300
+            document.write("<tr><th align='right';>Total fair :</th><td> "+total+" </td></tr>");
+        }
+       if(uniit>400){
+        total=40*(uniit-400)+8500
+        document.write("<tr><th>Total fair :</th><td> "+total+" </td></tr>");
+        }
+        document.write("</table></form>");
+        </script>
+        </head>
+        <body></body>
+        </html>

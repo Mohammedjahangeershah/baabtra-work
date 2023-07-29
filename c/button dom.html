@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- <body>
+    <p>We Imagine</p>
+    <p>We Believe</p>
+    <p>We Achieve</p>
+    <button class="click" onclick="para"> click here</button>
+    <script>
+      x=0;
+         let clicks =document.getElementsByTagName("button");
+      clicks[0].onclick=function(){
+        if(x==0)
+        {
+            p1= document.createElement("p");
+     p1.innerHTML="Hello";
+      window.document.body.appendChild(p1);
+        }
+      x=1
+      }
+    // </script> -->
+    <form action="">
+        <label for="name">Name :</label> <input type="text" id="txt1">
+        <button type="button" id="clicks" >ok</button>
+        <label for="store">store</label><textarea name="" id="str" cols="30" rows="10"></textarea>
+       
+    </form>
+        <script>
+            var clicks=document.getElementById('clicks');
+            var txt=document.getElementById("txt1");
+            var strg=document.getElementById("str")
+            clicks.onclick=function(){
+                idval=txt.value;
+               // alert(idval);
+               strg.value=idval;
+
+            }
+            
+        </script>
+</body>
+</html>
+
+
+  

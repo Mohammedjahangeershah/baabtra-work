@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .content{
+            color: lightcoral;
+            background-color: blanchedalmond;
+        }
+    </style>
+</head>
+
+
+<body>
+    <h1 id="heading"> document model</h1>
+    <p class="content">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quam harum quasi minima odit pariatur
+        temporibus? Aspernatur aperiam architecto illum neque enim, pariatur rem perspiciatis ullam, odio, mollitia
+        facilis voluptatem.
+    </p>
+    <h1 class="heading1">Lorem ipsum dolor sit.
+    </h1>
+    <p class="content">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus non tempore neque eius, hic est ullam
+        mollitia beatae corporis voluptatibus voluptatum enim autem nam. Libero harum eligendi ipsam laborum esse!
+    </p>
+    <button type="button" onclick="changeText()">Change text</button>
+    <div id="box"></div>
+    <button type="button" onclick="changeStyle()">Change Style</button>
+    <button type="button" onclick="applyStyle()">Apply style</button>
+    <br>
+    <input type="text" id="input" placeholder=" Enter your Name">
+    <button type="button" onclick="showValue()">Show value</button> 
+    <script>
+        console.log(document.getElementById("heading"));
+        console.log(document.getElementsByClassName("content"));
+        console.log(document.getElementsByTagName("h1"));
+        
+        function changeText(){
+            document.getElementById("heading").innerHTML = "Document Object Model (DOM)"
+        }
+        document.getElementById("box").style.height="300px";
+        document.getElementById("box").style.width="300px";
+        document.getElementById("box").style.backgroundColor="red";
+
+        function changeStyle(){
+            var box = document.getElementById("box");
+            box.style.height ="300px";
+            box.style.width ="300px";
+            box.style.backgroundColor ="yellow";
+        }
+
+        function applyStyle(){
+            var div =document.getElementById("box")
+            div.style.cssText ="height:200px; width:200px; backgroundcolor:blue;"
+        }
+        function showValue(){
+            var name=document.getElementById("input")
+            var inputValue = name.value
+            alert(["your name is "+inputValue])
+        }
+
+
+
+
+
+    </script>
+</body>
+
+</html>

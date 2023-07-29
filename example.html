@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var fruit_name=new Array();
+var fruit_price=new Array();
+lmt=parseInt(prompt("Enter a limit"));
+for(i=0;i<lmt;i++)
+{
+fruit_name[i]=prompt("Enter Fruits");
+fruit_price[i]=prompt("Enter Price");
+}
+//alert(l);
+/*for(i=lmt-1;i>=0;i--)
+{
+alert(l[i]);
+}*/
+
+document.write("<table border='1' align='center'>");
+document.write("<tr><th colspan='2'>Fruit Lists</th><th>Price</th></tr>")
+document.write("<tr><th>SlNo</th><th>Name</th><td>Price</td></tr>")
+for(i=0,j=1;i<lmt;i++,j++)
+{
+document.write("<tr><td>"+j+"</td><td>"+fruit_name[i]+"</td><td>"+fruit_price[i]+"</td></tr>");
+}
+document.write("</table>");
+/*
+function add(a,b)
+{
+    return a+b;
+}
+function sub(a,b)
+{
+    return a-b;
+}
+function mult(a,b)
+{
+    return a*b;
+}
+function div(a,b)
+{
+    return a%b;
+}
+x=50;
+y=60;
+d=add(x,y);
+p=sub(x,y);
+e=mult(x,y)
+r=div(x,y)
+alert(d)
+alert(p)
+alert(e)
+alert(r)*/
+    </script>
+</body>
+</html>

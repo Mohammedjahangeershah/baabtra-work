@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>hello world</p>
+    <p>hi man</p>
+    <p>shsgsgsgg</p>
+    <button ></button>
+    <script>
+       x=document.getElementsByTagName("p")
+      alert(x.length)
+       alert(x[0].innerHTML);
+       x[0].onclick=function(){
+       x[0].innerHTML="hai";
+       x[0].align="right";
+       x[0].style.color="#f00";}
+       p1=document.createElement("p");
+       p1.innerHTML="hai";
+       document.body.appendChild(p1);
+    
+    </script>
+</body>
+</html>

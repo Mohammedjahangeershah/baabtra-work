@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var fruit_list=new Array()
+        fruit_list['fruit_name']=new Array()
+        fruit_list['fruit_price']=new Array()
+        for(i=0;i<5;i++){
+            fruit_list['fruit_name'][i]=prompt("enter the fruit name ");
+            fruit_list['fruit_price'][i]=prompt("enter rhe price");
+        }
+        document.write("<table border='1' align='center'>");
+document.write("<tr><th colspan='2'>Fruit Lists</th><th>Price</th></tr>");
+document.write("<tr><th>SlNo</th><th>Name</th><td>Price</td></tr>");
+for(i=0,j=1;i<5;i++,j++)
+{
+document.write("<tr><td>"+j+"</td><td>"+fruit_list['fruit_name'][i]+"</td><td>"+fruit_list['fruit_price'][i]+"</td></tr>");
+}
+document.write("</table>");
+/*a=parseInt(prompt("enter an id"))
+alert(fruit_price[a])*/
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
